@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type = "text/css" href="static/style.css" />
+        <script>
+                function popitup(url,windowName) {
+                    newwindow=window.open(url,windowName,'height=200,width=150');
+                    if (window.focus) {newwindow.focus()}
+                    return false;
+                };
+        </script>
+    </head>
+    <body>
+        <ul class="flex-container">
+            {%for key, value in ras_actions.items()%}
+                <a href="" onclick="popitup('/actions/{{key}}', '{{value["name"]}}');"><li class="flex-item">{{value["name"]}}</li></a> 
+            {%endfor%} 
+        </ul>
+    </body>
+</html>
